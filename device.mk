@@ -93,8 +93,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras \
-    nfc_nci.pn54x.default
-
+    nfc_nci.pn54x.default \
+    NfcNci
 
 # Permissions
 PRODUCT_COPY_FILES += \
