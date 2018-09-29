@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="treble.overlay.notch"
+        package="com.treble.overlay.notch.eml"
         android:versionCode="1"
         android:versionName="1.0">
         <overlay android:targetPackage="android"
-                android:requiredSystemPropertyName="persist.sys.overlay.notch"
-		android:priority="37"
+                android:requiredSystemPropertyName="ro.hw.oemName"
+                android:requiredSystemPropertyValue="+EML*"
+		android:priority="40"
 		android:isStatic="true" />
 </manifest>

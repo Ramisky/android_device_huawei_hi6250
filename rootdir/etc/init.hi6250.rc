@@ -35,24 +35,6 @@ on property:ro.product.device=HWBLA-H
 on property:ro.product.device=HWLON-H  
     setprop persist.sys.overlay.burnin true
 
-on property:ro.product.device=HWANE
-    setprop persist.sys.overlay.notch true
-
-on property:ro.product.device=HWEML
-    setprop persist.sys.overlay.notch true
-
-on property:ro.product.device=HWCLT
-    setprop persist.sys.overlay.notch true
-
-on property:ro.product.device=HWANE-H
-    setprop persist.sys.overlay.notch true
-
-on property:ro.product.device=HWEML-H
-    setprop persist.sys.overlay.notch true
-
-on property:ro.product.device=HWCLT-H
-    setprop persist.sys.overlay.notch true
-
 service dpeservice-1.0 /system/bin/displayengineserver@1.0
     class main
     user graphics

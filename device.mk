@@ -161,7 +161,9 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-	treble-overlay-notch \
+	treble-overlay-notch-ane \
+	treble-overlay-notch-clt \
+	treble-overlay-notch-eml \
 	treble-overlay-burnin
 
 # Fingerprint Gestures
@@ -172,3 +174,12 @@ PRODUCT_COPY_FILES += \
 	device/huawei/hi6250/Fingerprint/hw-fpnav:system/bin/hw-fpnav \
 	device/huawei/hi6250/Fingerprint/hw-fpnav.dex:system/phh/hw-fpnav.dex \
 	device/huawei/hi6250/Fingerprint/fingerprint.kl:system/phh/huawei/fingerprint.kl
+
+# AOSP OVERLAY (its only for Askuccio build)
+PRODUCT_PACKAGES += \
+	DisplayCutoutEmulationCorner \
+	DisplayCutoutEmulationDouble \
+	DisplayCutoutEmulationNarrowOverlay \
+	DisplayCutoutEmulationTallOverlay \
+	DisplayCutoutEmulationWideOverlay \
+	SysuiDarkTheme
