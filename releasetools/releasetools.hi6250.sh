@@ -17,6 +17,11 @@
 
 # Remount system as R/W
 mount -o rw,remount /system
+mount -o rw,remount /vendor
+
+# FIX FP Gestures
+rm -rf /system/usr/keychars/Virtual.kcm
+rm -rf /vendor/usr/keylayout/fingerprint.k
 
 # Remove duplicated genfscon rules
 sed -i "/genfscon exfat/d" /system/etc/selinux/plat_sepolicy.cil
