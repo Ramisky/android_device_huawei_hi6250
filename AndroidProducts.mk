@@ -14,7 +14,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_hi6250.mk \
+    aosp_hi6250:$(LOCAL_DIR)/aosp_hi6250.mk \
+    lineage_hi6250:$(LOCAL_DIR)/lineage_hi6250.mk \
+    pixys_hi6250:$(LOCAL_DIR)/pixys_hi6250.mk \
     $(LOCAL_DIR)/huawei_hi6250.mk
 
 
