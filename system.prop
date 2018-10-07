@@ -27,4 +27,4 @@ persist.debug.wfd.enable=0
 debug.hwui.profile=true
 debug.hwc.max_hw_overlays=0
 
-ro.build.version.security_patch_sys=2018-09-05
+ro.build.version.security_patch_sys=2018-10-05
