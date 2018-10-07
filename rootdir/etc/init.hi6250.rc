@@ -23,18 +23,6 @@ on property:ro.lineage.device=*
 on property:sys.usb.ffs.mtp.ready=0
     setprop sys.usb.ffs.mtp.ready 1
 
-on property:ro.product.device=HWBLA
-    setprop persist.sys.overlay.burnin true
-
-on property:ro.product.device=HWLON
-    setprop persist.sys.overlay.burnin true
-
-on property:ro.product.device=HWBLA-H
-    setprop persist.sys.overlay.burnin true
-
-on property:ro.product.device=HWLON-H  
-    setprop persist.sys.overlay.burnin true
-
 service dpeservice-1.0 /system/bin/displayengineserver@1.0
     class main
     user graphics

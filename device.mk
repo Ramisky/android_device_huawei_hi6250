@@ -15,6 +15,16 @@
 #
 
 $(call inherit-product, vendor/huawei/hi6250/hi6250-vendor.mk)
+$(call inherit-product, device/huawei/hi6250/overlay.mk)
+
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -24,10 +34,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Audio
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
-
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -39,7 +45,7 @@ PRODUCT_COPY_FILES += \
 
 # APNs
 PRODUCT_COPY_FILES += \
-     device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+     $(LOCAL_PATH)/ril/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -94,7 +100,6 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras \
     nfc_nci.pn54x.default \
-    NfcNci \
     libnfc-nci
 
 PRODUCT_COPY_FILES += \
@@ -159,13 +164,6 @@ PRODUCT_COPY_FILES += \
 	 $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
 	 $(LOCAL_PATH)/configs/gps.conf:system/etc/gps_debug.conf
 
-# Overlays
-PRODUCT_PACKAGES += \
-	treble-overlay-notch-ane \
-	treble-overlay-notch-clt \
-	treble-overlay-notch-eml \
-	treble-overlay-burnin
-
 # Fingerprint Gestures
 PRODUCT_PACKAGES += \
 	hw-fpnav-daemon
@@ -174,12 +172,3 @@ PRODUCT_COPY_FILES += \
 	device/huawei/hi6250/Fingerprint/hw-fpnav:system/bin/hw-fpnav \
 	device/huawei/hi6250/Fingerprint/hw-fpnav.dex:system/phh/hw-fpnav.dex \
 	device/huawei/hi6250/Fingerprint/fingerprint.kl:system/phh/huawei/fingerprint.kl
-
-# AOSP OVERLAY (its only for Askuccio build)
-PRODUCT_PACKAGES += \
-	DisplayCutoutEmulationCorner \
-	DisplayCutoutEmulationDouble \
-	DisplayCutoutEmulationNarrowOverlay \
-	DisplayCutoutEmulationTallOverlay \
-	DisplayCutoutEmulationWideOverlay \
-	SysuiDarkTheme
